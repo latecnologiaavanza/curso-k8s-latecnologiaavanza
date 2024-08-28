@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 2  # Número inicial de réplicas
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+
+#ESCALADO HORIZONTAL: CAMBIAR EL NUMERO DE REPLICAS DEL POD 
+#ESCALADO VERTICAL: AJUSTAR LOS RECURSOS COMO CPU Y MEMORIA ASIGNADOS A UN POD

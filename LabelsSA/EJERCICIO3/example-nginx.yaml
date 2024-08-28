@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-sample-pod
+  annotations:
+    created-by: "user@example.com"
+    purpose: "Ejemplo de uso de anotaciones"
+    monitoring: "enabled"
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx:latest
